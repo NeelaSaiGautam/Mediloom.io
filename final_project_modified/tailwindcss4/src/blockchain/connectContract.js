@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 import contractData from "../blockchain/deployments/MediloomFileStorage.json";
 
-const PRIVATE_KEY = "add ganache private key 1 here"; // 🔐 From Ganache
+const PRIVATE_KEY = "add ganache private_key_1 here"; // 🔐 From Ganache
 const GANACHE_RPC = "http://127.0.0.1:7545"; // Ganache default
 
 export async function connectContract() {
