@@ -90,7 +90,7 @@ Tools: VS Code, Git, GitHub, Grafana
 
 📁 **Environment Configuration**
 
-Create and configure all required .env files in their respective folders.( 1st one in final_project_project and 2nd one in blockchain folder)
+Create and configure all required .env files in their respective folders.
 
 Ensure the following are correctly configured:
 
