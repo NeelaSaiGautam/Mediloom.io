@@ -1,6 +1,6 @@
 # Mediloom.io
 
-🏥 Mediloom.io – Smart Healthcare Resource Management Platform
+🏥 **Mediloom.io – Smart Healthcare Resource Management Platform**
 
 📌 **Project Overview**
 
