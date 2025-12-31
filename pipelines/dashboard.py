@@ -5,12 +5,17 @@ import time
 import plotly.graph_objects as go
 from datetime import datetime
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Database connection
 conn = psycopg2.connect(
-    host="localhost",
-    database="DSP",
-    user="postgres",
-    password="gautam"
+    host=os.getenv("DB_HOST"),
+    database=os.getenv("DB_NAME"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASS")
 )
 cursor = conn.cursor()
 

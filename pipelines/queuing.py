@@ -3,14 +3,17 @@ import pandas as pd
 import random
 import time
 
+import os
+from dotenv import load_dotenv
+
 # --- Connect to PostgreSQL ---
 def connect_db():
     return psycopg2.connect(
-        dbname="DSP",
-        user="postgres",
-        password="gautam",
-        host="localhost",
-        port="5432"
+            dbname=os.getenv("DB_NAME"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASS"),
+            host=os.getenv("DB_HOST"),
+            port="5432"
     )
 
 # --- Fetch emergency and urgent patients ---

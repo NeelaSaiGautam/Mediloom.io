@@ -134,13 +134,17 @@ for date, inflow in future_predictions:
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Setup your PostgreSQL connection
 conn = psycopg2.connect(
-    host="localhost",         # adjust as needed
-    port="5432",
-    dbname="DSP",
-    user="postgres",
-    password="gautam"
+    host=os.getenv("DB_HOST"),
+    database=os.getenv("DB_NAME"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASS")
 )
 
 # Get predicted dates

@@ -6,14 +6,19 @@ from kafka import KafkaProducer, KafkaConsumer
 import psycopg2
 from faker import Faker
 
+import os
+from dotenv import load_dotenv
+
 fake = Faker()
+
+load_dotenv()
 
 # PostgreSQL connection
 conn = psycopg2.connect(
-    host="localhost",
-    database="DSP",
-    user="postgres",
-    password="gautam"
+    host=os.getenv("DB_HOST"),
+    database=os.getenv("DB_NAME"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASS")
 )
 cursor = conn.cursor()
 

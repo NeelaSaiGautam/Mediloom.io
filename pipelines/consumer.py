@@ -3,6 +3,10 @@ from kafka import KafkaConsumer
 import psycopg2
 from datetime import datetime
 
+import os
+import psycopg2
+from dotenv import load_dotenv
+
 # Kafka config
 KAFKA_BROKER = "kafka-38e1fd14-saigautam-19e3.l.aivencloud.com:28468"
 TOPIC_NAME = "patientflow"
@@ -18,12 +22,14 @@ consumer = KafkaConsumer(
     value_deserializer=lambda m: json.loads(m.decode('utf-8'))
 )
 
+load_dotenv()
+
 # PostgreSQL connection
 conn = psycopg2.connect(
-    host="localhost",
-    database="DSP",
-    user="postgres",
-    password="gautam"
+    host=os.getenv("DB_HOST"),
+    database=os.getenv("DB_NAME"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASS")
 )
 cursor = conn.cursor()
 
