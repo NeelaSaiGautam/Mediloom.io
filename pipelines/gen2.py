@@ -23,8 +23,8 @@ conn = psycopg2.connect(
 cursor = conn.cursor()
 
 # Kafka connection details
-KAFKA_BROKER = "kafka-38e1fd14-saigautam-19e3.l.aivencloud.com:28468"
-TOPIC_NAME = "patientflow"
+KAFKA_BROKER = os.getenv("KAFKA_BROKER")
+TOPIC_NAME = os.getenv("KAFKA_TOPIC")
 
 # Load authentication certificates
 CERT_FOLDER = "./certs"

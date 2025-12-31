@@ -7,9 +7,11 @@ import os
 import psycopg2
 from dotenv import load_dotenv
 
+load_dotenv()
+
 # Kafka config
-KAFKA_BROKER = "kafka-38e1fd14-saigautam-19e3.l.aivencloud.com:28468"
-TOPIC_NAME = "patientflow"
+KAFKA_BROKER = os.getenv("KAFKA_BROKER")
+TOPIC_NAME = os.getenv("KAFKA_TOPIC")
 CERT_FOLDER = "./certs"
 
 consumer = KafkaConsumer(
@@ -22,7 +24,7 @@ consumer = KafkaConsumer(
     value_deserializer=lambda m: json.loads(m.decode('utf-8'))
 )
 
-load_dotenv()
+
 
 # PostgreSQL connection
 conn = psycopg2.connect(
