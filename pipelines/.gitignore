@@ -1,2 +1,5 @@
-.certs/
-pipelines/certs/
+certs/
+
+.env
+
+producer.py
